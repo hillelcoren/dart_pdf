@@ -27,7 +27,7 @@ class PdfPageFormat {
     double marginLeft = 0.0,
     double marginRight = 0.0,
     double? marginAll,
-    this.pageCount = 0,
+    this.pageCount = 0.0,
   })  : assert(width > 0),
         assert(height > 0),
         marginTop = marginAll ?? marginTop,
