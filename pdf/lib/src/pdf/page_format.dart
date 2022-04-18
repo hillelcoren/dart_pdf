@@ -19,13 +19,16 @@ import 'dart:math' as math;
 import 'point.dart';
 
 class PdfPageFormat {
-  const PdfPageFormat(this.width, this.height,
-      {double marginTop = 0.0,
-      double marginBottom = 0.0,
-      double marginLeft = 0.0,
-      double marginRight = 0.0,
-      double? marginAll})
-      : assert(width > 0),
+  const PdfPageFormat(
+    this.width,
+    this.height, {
+    double marginTop = 0.0,
+    double marginBottom = 0.0,
+    double marginLeft = 0.0,
+    double marginRight = 0.0,
+    double? marginAll,
+    double? pageCount,
+  })  : assert(width > 0),
         assert(height > 0),
         marginTop = marginAll ?? marginTop,
         marginBottom = marginAll ?? marginBottom,
@@ -62,6 +65,7 @@ class PdfPageFormat {
 
   final double width;
   final double height;
+  final double pageCount;
 
   final double marginTop;
   final double marginBottom;
@@ -128,7 +132,8 @@ class PdfPageFormat {
         other.marginLeft == marginLeft &&
         other.marginTop == marginTop &&
         other.marginRight == marginRight &&
-        other.marginBottom == marginBottom;
+        other.marginBottom == marginBottom &&
+        other.pageCount == pageCount;
   }
 
   @override

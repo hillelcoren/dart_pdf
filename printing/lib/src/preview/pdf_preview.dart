@@ -186,6 +186,7 @@ class _PdfPreviewState extends State<PdfPreview> {
         pages.first.page!.width * PdfPageFormat.inch / dpi,
         pages.first.page!.height * PdfPageFormat.inch / dpi,
         marginAll: 5 * PdfPageFormat.mm,
+        pageCount: pages.length,
       );
     }
 
